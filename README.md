@@ -2,6 +2,7 @@
 
 
 
+```
 bash mininginfo.sh &
 
 ./safecoind &
@@ -9,3 +10,4 @@ bash mininginfo.sh &
 npm install discord.js
 
 node app.js
+```
