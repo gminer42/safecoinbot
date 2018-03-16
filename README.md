@@ -33,6 +33,7 @@ cd safecoin
 
 nohup bash mininginfo.sh &
 ```
+Now you have a json file mininginfo.json
 
 ## Enable the discord bot
 ```
@@ -42,3 +43,7 @@ npm install discord.js
 
 nohup node app.js &
 ```
+
+## Invite the bot to the server
+
+https://discordapp.com/oauth2/authorize?&client_id=INSERTHEREBOTCLIENTID&scope=bot&permissions=0
