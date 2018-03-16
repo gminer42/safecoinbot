@@ -26,7 +26,7 @@ nohup ./safecoind &
 Let the wallet get synced 
 
 
-## Run the json file generator
+## Run json file generator
 
 ```
 cd safecoin
@@ -35,7 +35,7 @@ nohup bash mininginfo.sh &
 ```
 Now you have a json file mininginfo.json
 
-## Enable the discord bot
+## Enable discord bot
 ```
 npm init 
 
@@ -44,6 +44,6 @@ npm install discord.js
 nohup node app.js &
 ```
 
-## Invite the bot to the server
+## Invite bot to server
 
 https://discordapp.com/oauth2/authorize?&client_id=INSERTHEREBOTCLIENTID&scope=bot&permissions=0
