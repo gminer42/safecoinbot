@@ -40,5 +40,5 @@ npm init
 
 npm install discord.js
 
-node app.js
+nohup node app.js &
 ```
