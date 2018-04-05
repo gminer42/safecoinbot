@@ -45,13 +45,13 @@ function parseMessage(msg, sender, msgObj) {
 	case "lambo":
 	case "дфьищ":
             if (msg.length == 1) {
-                msgObj.reply("\n**Beep Boop - Boop Beep** \n \n To lambo, one must hodl.");
+                msgObj.reply("\n**Beep Boop - Boop Beep** \nTo lambo, one must hodl.");
         	break;
             } 
 	case "beer":
 	case "иуук":
             if (msg.length == 1) {
-                msgObj.reply("\n**Beep Boop - Boop Beep** \n **SafeCion** The most interesting coin in the world!");
+                msgObj.reply("\n**Beep Boop - Boop Beep** \n**SafeCion** The most interesting coin in the world!");
         	break;
             } 
 	case "bot?":
@@ -63,7 +63,7 @@ function parseMessage(msg, sender, msgObj) {
 	case "bot":
 	case "ище":
             if (msg.length == 1) {
-                msgObj.reply("\n**Beep Boop - Boop Beep** \n**I'm here!**");
+                msgObj.reply("\n**Beep Boop - Boop Beep**\n**I'm here!**");
         	break;
             } 
 	case "moon":
