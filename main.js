@@ -1,8 +1,6 @@
-const token = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"; 
-const prefix = "!";
+const config = require("./config.json");
 
 var client = new(require("discord.js")).Client();
-var accounts;
 var fs = require('fs');
 
 var help = require("./data.js").help;
@@ -203,7 +201,7 @@ function recognizeMessage(msg) {
 	}
     });
 
-    if (msg.content.toLowerCase().substr(0, 1) !== prefix) {
+    if (msg.content.toLowerCase().substr(0, 1) !== config.prefix) {
         return;
     }
 
@@ -227,4 +225,4 @@ client.on("messageUpdate", (oldMsg, msg) => {
     recognizeMessage(msg);
 });
 
-client.login(token);
+client.login(config.token);
