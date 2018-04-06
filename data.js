@@ -8,7 +8,9 @@ var HelpText = `\n\`\`\`prolog\nWelcome to the Safe Project Bot! Here You can fi
 -- \`!nethash [your Sol/s]\` | Current network hashrate, [*and approximate SAFE per hour/day*].
 -- \`!pool [pool]\` | Popular pools [*and connection info*].
 Run "!help COMMAND" for more info on a command.
+
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
+
 
 var HelpStrings = {
     "help": "\"\`!help\`\" command details how the bot works and provides examples of commands. For instance, \"\`!help help\`\", the command you just entered. Seriously. Why are you running help on help?",
@@ -21,6 +23,7 @@ var HelpStrings = {
     "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information."
 }
 
+
 var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list!\`\`\`**POOLS:**
 -- \`!pool mspe\` | Miningspeed <https://safecoin.miningspeed.com/>
 -- \`!pool equi\` | Equipool <https://equipool.1ds.us/>
@@ -28,10 +31,13 @@ var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list
 -- \`!pool cats\` | Catspool <http://safecoin.catspool.org/>
 -- \`!pool pcmn\` | PcMining <http://pcmining.xyz:8080/>
 -- \`!pool coor\` | Coorp.io <https://www.coorp.io/pool/safe/>
--- \`!pool nibi\` | Nibiru Pool <https://safe.nibirupool.com/>
+-- \`!pool nibi\` | Nibiru pool <https://safe.nibirupool.com/>
 -- \`!pool mndr\` | Minadorespool <http://equi.minadorespool.gq/>
+-- \`!pool club\` | Club pool SafeCoin <http://safecoinpool.club/>
 Run "!pool POOL" for pool connection info.
+
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
+
 
 var poolMspeed =`\`\`\`prolog\nMiningSpeed Pool connection info.\`\`\`
 \`Website\` | <https://safecoin.miningspeed.com/>
@@ -43,10 +49,11 @@ var poolMspeed =`\`\`\`prolog\nMiningSpeed Pool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l mine-eu.miningspeed.com:2051 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l mine-eu.miningspeed.com:2051 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool mine-us.miningspeed.com:2052 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://mine-eu.miningspeed.com:2054 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
-miner.exe --server mine-us.miningspeed.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 2052`;
+miner.exe --server mine-us.miningspeed.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 2052\`\`\``;
+
 
 var poolEqui =`\`\`\`prolog\nEquipool connection info.\`\`\`
 \`Website\` | <https://equipool.1ds.us/>
@@ -61,9 +68,9 @@ var poolEqui =`\`\`\`prolog\nEquipool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l mine.equipool.1ds.us:50110 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l mine.equipool.1ds.us:50110 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool mine.equipool.1ds.us:50114 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
-miner.exe --server mine.equipool.1ds.us --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 50113`;
+miner.exe --server mine.equipool.1ds.us --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 50113\`\`\``;
 
 
 var poolSexy =`\`\`\`prolog\nPool Sexy connection info.\`\`\`
@@ -75,9 +82,10 @@ var poolSexy =`\`\`\`prolog\nPool Sexy connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l safe.pool.sexy:21002 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l safe.pool.sexy:21002 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool safe.pool.sexy:21003 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw **x** -allpools 1
-miner.exe --server safe.pool.sexy --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass **x** --port 21003`;
+miner.exe --server safe.pool.sexy --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass **x** --port 21003\`\`\``;
+
 
 var poolCats =`\`\`\`prolog\nCatspool connection info.\`\`\`
 \`Website\` | <http://safecoin.catspool.org/>
@@ -89,10 +97,11 @@ var poolCats =`\`\`\`prolog\nCatspool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l safecoin.catspool.org:3432 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l safecoin.catspool.org:3432 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool safecoin-us.catspool.org:3432 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://safecoin.catspool.org:3433 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
-miner.exe --server safecoin-asia.catspool.org --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3432`;
+miner.exe --server safecoin-asia.catspool.org --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3432\`\`\``;
+
 
 var poolPcMining =`\`\`\`prolog\nPCMining Pool connection info.\`\`\`
 \`Website\` | <http://pcmining.xyz:8080/>
@@ -104,9 +113,10 @@ var poolPcMining =`\`\`\`prolog\nPCMining Pool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l asia.pcmining.xyz:3457 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l asia.pcmining.xyz:3457 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool us.pcmining.xyz:3457 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
-miner.exe --server pcmining.xyz --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3457`;
+miner.exe --server pcmining.xyz --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3457\`\`\``;
+
 
 var poolCoorp =`\`\`\`prolog\nCoorp Pool connection info.\`\`\`
 \`Website\` | <https://www.coorp.io/pool/safe/>
@@ -115,9 +125,10 @@ var poolCoorp =`\`\`\`prolog\nCoorp Pool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l eu.coorp.io:3041 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l eu.coorp.io:3041 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool eu.coorp.io:3041 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
-miner.exe --server eu.coorp.io --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3041`;
+miner.exe --server eu.coorp.io --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3041\`\`\``;
+
 
 var poolNibiru =`\`\`\`prolog\nNibiru Pool connection info.\`\`\`
 \`Website\` | <https://safe.nibirupool.com/>
@@ -128,10 +139,10 @@ var poolNibiru =`\`\`\`prolog\nNibiru Pool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l safe.nibirupool.com:8038 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l safe.nibirupool.com:8038 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool safe.nibirupool.com:8038 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://safe.nibirupool.com:7037 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
-miner.exe --server safe.nibirupool.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 9039`;
+miner.exe --server safe.nibirupool.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 9039\`\`\``;
 
 
 var poolMinado =`\`\`\`prolog\nMinadorespool connection info.\`\`\`
@@ -142,9 +153,25 @@ var poolMinado =`\`\`\`prolog\nMinadorespool connection info.\`\`\`
 
 To mine SafeCoin just use any ZCASH (EquiHash) miner
 **Examples:**
-nheqminer.exe -l equi.minadorespool.gq:3031 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+\`\`\`\nnheqminer.exe -l equi.minadorespool.gq:3031 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool equi.minadorespool.gq:3032 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
-miner.exe --server equi.minadorespool.gq --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 3032`;
+miner.exe --server equi.minadorespool.gq --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 3032\`\`\``;
+
+
+var poolClub =`\`\`\`prolog\nCulb pool connection info.\`\`\`
+\`Website\` | <http://safecoinpool.club/>
+\`low diff port\` | 3032 
+\`mid diff port\` | 5032 
+\`default port\` | 7032
+\`high diff - Nicehash port\` | 8989
+\`server\` | safecoinpool.club
+
+To mine SafeCoin just use any ZCASH (EquiHash) miner
+**Examples:**
+\`\`\`\nnheqminer.exe -l safecoinpool.club:3032 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
+ZecMiner64.exe -zpool safecoinpool.club:5032 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
+miner.exe --server safecoinpool.club --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 7032\`\`\``;
+
 
 var PoolsStrings = {
     "mspe": poolMspeed,
@@ -162,8 +189,11 @@ var PoolsStrings = {
     "nibi": poolNibiru,
     "тшиш": poolNibiru,
     "mndr": poolMinado,
-    "ьтвк": poolMinado
+    "ьтвк": poolMinado,
+    "club": poolClub,
+    "сдги": poolClub
 }
+
 
 var LinksText = `\n\`\`\`prolog\nHere You can find useful links!\`\`\`**LINKS:**
 \`SafeCoin Website\` <https://safecoin.org/>
@@ -175,6 +205,7 @@ var LinksText = `\n\`\`\`prolog\nHere You can find useful links!\`\`\`**LINKS:**
 \`SafeCoin Mining Profitability Calculator\` <https://www.crypto-coinz.net/coin-info/?95-SafeCoin-SAFE-Equihash-calculator/>
 \`SafeCoin Exchanges\` <https://safe.trade/>, <https://fair.exchange/>, <https://swap.safecoin.org/>
 \`SafeCoin Community\` <https://twitter.com/safecoins>, <https://www.reddit.com/r/SafeCoins/>, <https://www.facebook.com/safecoins/>
+
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
 
 module.exports = {
