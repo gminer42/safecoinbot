@@ -137,7 +137,7 @@ function parseMessage(msg, sender, msgObj) {
 		    }
 		    if (IsJsonString(data)) { 
 			mininginfo = JSON.parse(data);
-                	msgObj.reply(" Current difficulty is "+ mininginfo.difficulty);
+                	msgObj.reply(" Current difficulty is **"+ Math.round(1000*(mininginfo.difficulty))/1000+"**");
 		    } else {
 			msgObj.reply(" data is not available.")
 		    }
