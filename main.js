@@ -58,7 +58,7 @@ function parseMessage(msg, sender, msgObj) {
 	case "bot!":
 	case "бот?":
 	case "бот!":
-	case "ищт?":
+	case "ище?":
 	case "ище!":
 	case "bot":
 	case "ище":
@@ -159,7 +159,6 @@ function recognizeMessage(msg) {
 	    }
 	    mininginfo = JSON.parse(data);
 	    client.user.setGame(mininginfo.networkhashps / 1000 +" kSol/s");
-//            msgObj.reply(" Current network hash is **"+ mininginfo.networkhashps / 1000 +"** kSol/s");
         });
         return;
     }
