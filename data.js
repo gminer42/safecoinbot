@@ -5,10 +5,10 @@ var HelpText = `\n\`\`\`prolog\nWelcome to the Safe Project Bot! Here You can fi
 -- \`!reward\` | Current block reward.
 -- \`!halve\` | Days to block reward halving. 
 -- \`!diff\` | Current block difficulty. 
--- \`!nethash\` | Current network hashrate.
--- \`!pool\` | Popular pools.
+-- \`!nethash [your Sol/s]\` | Current network hashrate, [*and approximate SAFE per hour/day*].
+-- \`!pool [pool]\` | Popular pools [*and connection info*].
 Run "!help COMMAND" for more info on a command.
-__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is AS IS software.__`;
+__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
 
 var HelpStrings = {
     "help": "\"\`!help\`\" command details how the bot works and provides examples of commands. For instance, \"\`!help help\`\", the command you just entered. Seriously. Why are you running help on help?",
@@ -17,8 +17,8 @@ var HelpStrings = {
     "reward": "\"\`!reward\`\" command returns current Block Reward. Reward amount halving every 86 days.",
     "halve": "\"\`!halve\`\" command returns days to block reward and interest rate halvin (every 86 days).",
     "diff": "\"\`!diff\`\" command returns current block difficulty.",
-    "nethash": "\"\`!nethash\`\" command returns current network hashrate.",
-    "pool": "\"\`!poll\`\" command returns popular pools list and connection information."
+    "nethash": "\"\`!nethash [your sols/s]\`\" command returns current network hashrate. If you input your power in sol/s, like \`!nethash 8654\` it returns approximate SAFE per hour and day at current network difficulty.",
+    "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information."
 }
 
 var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list!\`\`\`**POOLS:**
@@ -31,7 +31,7 @@ var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list
 -- \`!pool nibi\` | Nibiru Pool <https://safe.nibirupool.com/>
 -- \`!pool mndr\` | Minadorespool <http://equi.minadorespool.gq/>
 Run "!pool POOL" for pool connection info.
-__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is AS IS software.__`;
+__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
 
 var poolMspeed =`\`\`\`prolog\nMiningSpeed Pool connection info.\`\`\`
 \`Website\` | <https://safecoin.miningspeed.com/>
@@ -175,7 +175,7 @@ var LinksText = `\n\`\`\`prolog\nHere You can find useful links!\`\`\`**LINKS:**
 \`SafeCoin Mining Profitability Calculator\` <https://www.crypto-coinz.net/coin-info/?95-SafeCoin-SAFE-Equihash-calculator/>
 \`SafeCoin Exchanges\` <https://safe.trade/>, <https://fair.exchange/>, <https://swap.safecoin.org/>
 \`SafeCoin Community\` <https://twitter.com/safecoins>, <https://www.reddit.com/r/SafeCoins/>, <https://www.facebook.com/safecoins/>
-__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is AS IS software.__`;
+__By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
 
 module.exports = {
     help: (command) => {

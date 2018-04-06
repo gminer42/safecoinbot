@@ -132,10 +132,19 @@ function parseMessage(msg, sender, msgObj) {
 	    	        throw error;
 		    }
 		    mininginfo = JSON.parse(data);
-                    msgObj.reply(" Current network hash is **"+ mininginfo.networkhashps / 1000 +"** kSol/s");
-	        });
-            break;
-            } 
+                    msgObj.reply(" Current network hash is **"+ mininginfo.networkhashps / 1000 +"** kSol/s.");
+		});
+                break;
+            } else if (msg.length == 2 && Number(msg[1]) ) {
+	        fs.readFile('./mininginfo.json', 'utf8', function read(error, data) {
+		    if (error){
+	    	        throw error;
+		    }
+		    mininginfo = JSON.parse(data);
+                    msgObj.reply(" Network hash is about **"+ mininginfo.networkhashps / 1000 +" kSol/s.**\nWith your hashrete **"+Number(msg[1])+" Sol/s**  you will get approximate **"+Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 60) / 100 + " SAFE** per **hour** and **" +Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 1440) / 100  + " SAFE** per **day** at current network difficulty.\nThe further - the more difficult.");
+		});
+		break;
+	    }
 
         default:
             msgObj.reply(" Command not recognized. \"!help\" to get a list of commands or edit your last message.");
@@ -144,6 +153,14 @@ function parseMessage(msg, sender, msgObj) {
 
 function recognizeMessage(msg) {
     if (msg.content.toLowerCase().substr(0, 1) !== prefix) {
+        fs.readFile('./mininginfo.json', 'utf8', function read(error, data) {
+	    if (error){
+    	        throw error;
+	    }
+	    mininginfo = JSON.parse(data);
+	    client.user.setGame(mininginfo.networkhashps / 1000 +" kSol/s");
+//            msgObj.reply(" Current network hash is **"+ mininginfo.networkhashps / 1000 +"** kSol/s");
+        });
         return;
     }
     var sender = msg.author.toString();
