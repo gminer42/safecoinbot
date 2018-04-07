@@ -26,7 +26,7 @@ client.on("message", async message => {
 
   if(command == "help"){
     // bot returns help info 
-    message.channel.send("**Available Commands:**\n \n`!block` - Current block height \n`!halve` - Days to block halving \n`!diff` - Current block difficulty ")
+    message.channel.send("**Available Commands:**\n \n`!block` - Current block height \n`!halve` - Days to block reward halving \n`!diff` - Current block difficulty \n`!nethash` - Current network hashrate")
   }
 
   if(command == "block"){
@@ -41,13 +41,13 @@ client.on("message", async message => {
   }
   
   if(command == "halve"){
-    // makes the bot return the days for block halving
+    // makes the bot return the days for block reward halving
     fs.readFile('./mininginfo.json', 'utf8', function(error, data) {
     if (error){
         throw error;
     }
     mininginfo = JSON.parse(data);
-    message.channel.send(((131400 - (mininginfo.blocks % 131400)) / (24*60)).toFixed(2) + " days left for block halving")
+    message.channel.send(((123840 - (mininginfo.blocks % 123840)) / (24*60)).toFixed(2) + " days left until block reward halving")
     });
   }
   
@@ -62,6 +62,28 @@ client.on("message", async message => {
     });
   }
   
+  if(command == "nethash"){
+    // makes the bot return the current nethash
+    fs.readFile('./mininginfo.json', 'utf8', function(error, data) {
+    if (error){
+        throw error;
+    }
+    mininginfo = JSON.parse(data);
+    message.channel.send("Current network hash is "+ mininginfo.networkhashps / 1000 +" ksol/s")
+    });
+  }
+
+  if(command == "lambo"){
+    // when lambo
+    fs.readFile('./mininginfo.json', 'utf8', function(error, data) {
+    if (error){
+        throw error;
+    }
+   // mininginfo = JSON.parse(data);
+    message.channel.send("**Beep Boop - Boop Beep** \n \n To lambo, one must hodl.")
+    });
+  }
+
 });
 
 client.login(config.token);
