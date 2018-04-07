@@ -1,3 +1,6 @@
+//---This file specifies variables for commands with arguments and with a long text message
+
+//--raw text help var. start
 var HelpText = `\n\`\`\`prolog\nWelcome to the Safe Project Bot! Here You can find some Info!\`\`\`**COMMANDS:**
 -- \`!help\` | This output.
 -- \`!links\` | Useful links.
@@ -10,7 +13,16 @@ var HelpText = `\n\`\`\`prolog\nWelcome to the Safe Project Bot! Here You can fi
 Run "!help COMMAND" for more info on a command.
 
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
+//---raw text help var. end
 
+
+//---text strings for the second parameter in the "help" command for detailed help. start
+
+//--- "second argument": "description"  and  if not the last element then ","
+//--- if in text we need special symbols like   "   and   `   then need   \    before   
+//--- \n - next string 
+//--- \" - symbol "
+//--- \` - symbol `
 
 var HelpStrings = {
     "help": "\"\`!help\`\" command details how the bot works and provides examples of commands. For instance, \"\`!help help\`\", the command you just entered. Seriously. Why are you running help on help?",
@@ -20,10 +32,12 @@ var HelpStrings = {
     "halve": "\"\`!halve\`\" command returns days to block reward and interest rate halvin (every 86 days).",
     "diff": "\"\`!diff\`\" command returns current block difficulty.",
     "nethash": "\"\`!nethash [your sols/s]\`\" command returns current network hashrate. If you input your power in sol/s, like \`!nethash 8654\` it returns approximate SAFE per hour and day at current network difficulty.",
-    "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information."
+    "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information.", //add ","
+    "your sols/s": "\"\`!12345\`\" command returns approximate SAFE per hour and day at current network difficulty."  // add new advanced help string. "," does't need at las string of var
 }
+//---text strings for the second parameter in the "help" command end
 
-
+//raw text for "!pool"  msg output (1-st part of command with arguments). start
 var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list!\`\`\`**POOLS:**
 -- \`!pool mspe\` | Miningspeed <https://safecoin.miningspeed.com/>
 -- \`!pool equi\` | Equipool <https://equipool.1ds.us/>
@@ -37,8 +51,10 @@ var PoolsText = `\n\`\`\`prolog\nHere You can find our popular mining Pools list
 Run "!pool POOL" for pool connection info.
 
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
+//---raw text for "!pool" msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolMspeed =`\`\`\`prolog\nMiningSpeed Pool connection info.\`\`\`
 \`Website\` | <https://safecoin.miningspeed.com/>
 \`low diff port\` | 2051 
@@ -53,8 +69,9 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 ZecMiner64.exe -zpool mine-us.miningspeed.com:2052 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://mine-eu.miningspeed.com:2054 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
 miner.exe --server mine-us.miningspeed.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 2052\`\`\``;
+//---raw text for !pool msg output. end
 
-
+//---raw text !pool [pool] info. start
 var poolEqui =`\`\`\`prolog\nEquipool connection info.\`\`\`
 \`Website\` | <https://equipool.1ds.us/>
 \`CPU Port (409 diff) \` | 50110
@@ -71,8 +88,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l mine.equipool.1ds.us:50110 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool mine.equipool.1ds.us:50114 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 miner.exe --server mine.equipool.1ds.us --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 50113\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolSexy =`\`\`\`prolog\nPool Sexy connection info.\`\`\`
 \`Website\` | <http://safe.pool.sexy/#/>
 \`Default Port\` | 21002
@@ -85,8 +104,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l safe.pool.sexy:21002 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool safe.pool.sexy:21003 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw **x** -allpools 1
 miner.exe --server safe.pool.sexy --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass **x** --port 21003\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolCats =`\`\`\`prolog\nCatspool connection info.\`\`\`
 \`Website\` | <http://safecoin.catspool.org/>
 \`default port\` | 3432
@@ -101,8 +122,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 ZecMiner64.exe -zpool safecoin-us.catspool.org:3432 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://safecoin.catspool.org:3433 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
 miner.exe --server safecoin-asia.catspool.org --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3432\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolPcMining =`\`\`\`prolog\nPCMining Pool connection info.\`\`\`
 \`Website\` | <http://pcmining.xyz:8080/>
 \`default port\` | 3457
@@ -116,8 +139,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l asia.pcmining.xyz:3457 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool us.pcmining.xyz:3457 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 miner.exe --server pcmining.xyz --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3457\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolCoorp =`\`\`\`prolog\nCoorp Pool connection info.\`\`\`
 \`Website\` | <https://www.coorp.io/pool/safe/>
 \`default port\` | 3041
@@ -128,8 +153,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l eu.coorp.io:3041 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool eu.coorp.io:3041 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 miner.exe --server eu.coorp.io --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1060 --pass x --port 3041\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolNibiru =`\`\`\`prolog\nNibiru Pool connection info.\`\`\`
 \`Website\` | <https://safe.nibirupool.com/>
 \`low diff port\` | 8038
@@ -143,8 +170,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 ZecMiner64.exe -zpool safe.nibirupool.com:8038 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 ZecMiner64.exe -zpool ssl://safe.nibirupool.com:7037 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.v64 -zpsw x -allpools 1
 miner.exe --server safe.nibirupool.com --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 9039\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolMinado =`\`\`\`prolog\nMinadorespool connection info.\`\`\`
 \`Website\` | <http://equi.minadorespool.gq/>
 \`low diff port\` | 3031
@@ -156,8 +185,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l equi.minadorespool.gq:3031 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool equi.minadorespool.gq:3032 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 miner.exe --server equi.minadorespool.gq --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 3032\`\`\``;
+//---raw text for !pool msg output. end
 
 
+//---raw text !pool [pool] info. start
 var poolClub =`\`\`\`prolog\nCulb pool connection info.\`\`\`
 \`Website\` | <http://safecoinpool.club/>
 \`low diff port\` | 3032 
@@ -171,8 +202,10 @@ To mine SafeCoin just use any ZCASH (EquiHash) miner
 \`\`\`\nnheqminer.exe -l safecoinpool.club:3032 -u Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.cpu1 -p x -t 8
 ZecMiner64.exe -zpool safecoinpool.club:5032 -zwal Rke2SDbNRkipLSbL7kSEdjpnYSRq9fTb3o.3x580 -zpsw x -allpools 1
 miner.exe --server safecoinpool.club --user RwWkyWyxbcyXCb48JiMSDwLnB24sBQzqz8.10xGTX1080 --pass x --port 7032\`\`\``;
+//---raw text for !pool msg output. end
 
-
+//--- text strings for the second parameter in the "pool" command for detailed help. start
+//-- "second argument": "description". but now description is var 
 var PoolsStrings = {
     "mspe": poolMspeed,
     "ьызу": poolMspeed,
@@ -193,8 +226,10 @@ var PoolsStrings = {
     "club": poolClub,
     "сдги": poolClub
 }
+//--- text strings for the second parameter in the "pool" command. end 
 
 
+//---raw text !links command output. start
 var LinksText = `\n\`\`\`prolog\nHere You can find useful links!\`\`\`**LINKS:**
 \`SafeCoin Website\` <https://safecoin.org/>
 \`SafeCoin white paper\` <https://safecoin.org/assets/Safe%20White%20Paper.pdf> 
@@ -207,26 +242,28 @@ var LinksText = `\n\`\`\`prolog\nHere You can find useful links!\`\`\`**LINKS:**
 \`SafeCoin Community\` <https://twitter.com/safecoins>, <https://www.reddit.com/r/SafeCoins/>, <https://www.facebook.com/safecoins/>
 
 __By using this bot, you agree to release any parties related to this bot, from any and all liability. This is *AS IS* software.__`;
+//---raw text !links command output. end
 
+//export requested data
 module.exports = {
-    help: (command) => {
-        if (command) {
-            if (HelpStrings[command]) {
-                return HelpStrings[command];
+    help: (command) => { //help request
+        if (command) { // is there argumensts? (command==true?)
+            if (HelpStrings[command]) { // is this argument listed in var (var HelpStrings[have_this_elevent]?)
+                return HelpStrings[command]; //return value this var
             }
         }
-        return HelpText;
+        return HelpText; // no arguments - return default string
     },
-    pool: (command) => {
-        if (command) {
-            if (PoolsStrings[command]) {
-                return PoolsStrings[command];
+    pool: (command) => { //need pool info
+        if (command) { // is there argumensts?
+            if (PoolsStrings[command]) { // is this argument listed in var
+                return PoolsStrings[command]; //return value this var
             }
 	  return false;
         }
-        return PoolsText;
+        return PoolsText; // no arguments - return default string
     },
-    links: (command) => {
-        return LinksText;
+    links: (command) => { // need links info
+        return LinksText;// return default string
     }
 }
