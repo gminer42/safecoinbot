@@ -92,6 +92,17 @@ function parseMessage(msg, sender, msgObj) {
         	break;
             } 
 
+//-----new command with one parametr. shud bee before default in this section
+	case "joke": // command
+	case "jokes":// a synonym if necessary.
+	case "ощлу": // a synonym at wrong russian keyboar layot (it-s it's convenient for us)
+            if (msg.length == 1) {  //chech length command=1
+                msgObj.reply(" Current block reward is **128** SAFE"); //reply with mention
+                msgObj.author.send(" Current block reward is **128** SAFE"); // replay DM
+        	break; // exit case function
+            } 
+//------end new command
+
         case "block":
         case "идщсл":
             if (msg.length == 1) {
