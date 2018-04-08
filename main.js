@@ -194,7 +194,11 @@ function parseMessage(msg, sender, msgObj) {
 		    }
 		});
                 break;
-            } else if (msg.length == 2 && Number(msg[1]) ) { // if one agrument
+            } 
+//----
+        case "hashpower":
+        case "рфырзщцук":
+            if (msg.length == 2 && Number(msg[1]) ) { // if one agrument
 	        fs.readFile('./mininginfo.json', 'utf8', function read(error, data) {
 		    if (error){
 	    	        throw error;
@@ -208,24 +212,6 @@ function parseMessage(msg, sender, msgObj) {
 		});
 		break;
 	    }
-
-//----
-//------new calc start
-	case hash : // case hash==msg[0] user need calc
-            fs.readFile('./mininginfo.json', 'utf8', function read(error, data) { // reed info file
-    	        if (error){ 
-	            throw error;
-	        }
-	        if (IsJsonString(data)) { //if data valid JSON
-		    mininginfo = JSON.parse(data); 
-            	    msgObj.reply(" Network hash is about **"+ mininginfo.networkhashps / 1000 +" kSol/s.**\nWith your hashrate **"+Number(msg[0])+" Sol/s**  you will get approximate **"+Math.round(100*(Number(msg[0]) / mininginfo.networkhashps) * 128 * 60) / 100 + " SAFE** per **hour** and **" +Math.round(100*(Number(msg[0]) / mininginfo.networkhashps) * 128 * 1440) / 100  + " SAFE** per **day** at current network difficulty.\nThe further - the more difficult.");
-    		} else {  //if no valid JSON data
-		    msgObj.reply(" data is not available.") 
-		}
-	    });
-	    break; //exit from function parseMessage(msg, sender, msgObj)
-
-//-------new calc end 
 
 //---default case - not found
         default:

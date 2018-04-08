@@ -8,7 +8,8 @@ var HelpText = `\n\`\`\`prolog\nWelcome to the Safe Project Bot! Here You can fi
 -- \`!reward\` | Current block reward.
 -- \`!halve\` | Days to block reward halving. 
 -- \`!diff\` | Current block difficulty. 
--- \`!nethash [your Sol/s]\` | Current network hashrate, [*and approximate SAFE per hour/day*].
+-- \`!nethash\` | Current network hashrate.
+-- \`!hashpower [your Sol/s]\` | Approximate SAFE per hour/day.
 -- \`!pool [pool]\` | Popular pools [*and connection info*].
 Run "!help COMMAND" for more info on a command.
 
@@ -31,9 +32,9 @@ var HelpStrings = {
     "reward": "\"\`!reward\`\" command returns current Block Reward. Reward amount halving every 86 days.",
     "halve": "\"\`!halve\`\" command returns days to block reward and interest rate halvin (every 86 days).",
     "diff": "\"\`!diff\`\" command returns current block difficulty.",
-    "nethash": "\"\`!nethash [your sols/s]\`\" command returns current network hashrate. If you input your power in sol/s, like \`!nethash 8654\` it returns approximate SAFE per hour and day at current network difficulty.",
-    "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information.", //add ","
-    "your sols/s": "\"\`!12345\`\" command returns approximate SAFE per hour and day at current network difficulty."  // add new advanced help string. "," does't need at las string of var
+    "nethash": "\"\`!nethash\`\" command returns current network hashrate.",
+    "hashpower": "\"\`!hashpower [your sols/s]\`\" If you input your power in sol/s, like \`!hashpower 8654\` it returns approximate SAFE per hour and day at current network difficulty.",
+    "pool": "\"\`!poll [pool]\`\" command returns popular pools list and connection information."
 }
 //---text strings for the second parameter in the "help" command end
 
