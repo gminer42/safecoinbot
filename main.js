@@ -205,7 +205,7 @@ function parseMessage(msg, sender, msgObj) {
 		    }
 		    if (IsJsonString(data)) { 
 			mininginfo = JSON.parse(data);
-                	msgObj.reply(" Network hash is about **"+ mininginfo.networkhashps / 1000 +" kSol/s.**\nWith your hashrate **"+Number(msg[1])+" Sol/s**  you will get approximate **"+Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 60) / 100 + " SAFE** per **hour** and **" +Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 1440) / 100  + " SAFE** per **day** at current network difficulty.\nThe further - the more difficult.");
+                	msgObj.reply(" Network hash is about **"+ mininginfo.networkhashps / 1000 +" kSol/s.**\nWith your hashrate **"+Number(msg[1])+" Sol/s**  you will get approximate **"+Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 60) / 100 + " SAFE** per **hour** and **" +Math.round(100*(Number(msg[1]) / mininginfo.networkhashps) * 128 * 1440) / 100  + " SAFE** per **day** at current network difficulty.\nYour earnings will change with network difficulty.");
     		    } else {
 			msgObj.reply(" data is not available.")
 		    }
